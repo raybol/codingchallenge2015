@@ -63,14 +63,14 @@ string int_to_word(int n) {
 								word += "nineteen ";
 								break;
 							}
-							j++;
-							n %= divisor;
-							divisor /= 10;
+							
 						}
 						else {
 							word += "ten ";
-							j++;
 						}
+						j++;
+						n %= divisor;
+						divisor /= 10;
 					}
 					else
 						word += "one ";
@@ -128,7 +128,7 @@ string int_to_word(int n) {
 					word += "hundred ";
 				n %= divisor;
 				divisor /= 10;
-			}
+			}//end j for
 			if (m && (i == 1)) {
 				word += "million ";
 				m = false;
@@ -138,7 +138,7 @@ string int_to_word(int n) {
 				word += "thousand ";
 				t = false;
 			}
-		}
+		}//end i for
 	}
 	word.erase(word.end() - 1);
 	return word;
